@@ -1,0 +1,26 @@
+{% extends 'layout.twig' %}
+
+{% block title 'Recipe' %}
+
+{% block content %}
+
+	{# <p>{{ id }}</p> #}
+	<div class="container-2 w3-padding-48">
+		<div class="w3-card-2" style="width:50%">
+			<header class="w3-container w3-teal">
+				<a href="{{ url('edit_recipe', {'id': recipe.id}) }}" class="w3-right"><i class="fa fa-edit w3-large w3-padding trash-icon"></i></a>
+				<h1 class="w3-center">{{ recipe.name }}</h1>
+			</header>
+			<p class="w3-container">
+				<ul class="w3-padding w3-center" style="list-style:none">
+					<li>{{ recipe.ingredients }}</li>
+					<hr>
+					<li>{{ recipe.instructions }}</li>
+					<hr>
+					<li>Preparation time: {{ recipe.time }} Hr</li>	
+				</ul>
+			</p>
+		</div>
+	</div>
+
+{% endblock %}

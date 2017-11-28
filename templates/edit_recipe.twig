@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block title 'Edit Recipe' %}
+
+{% block content %}
+	<div class="w3-container w3-center w3-padding-64 w3-margin" >
+		<div class="w3-card-2">
+			<header class="w3-container w3-teal">
+			  <h1>Edit Recipe</h1>
+			</header>
+			<form class="w3-container" method="post" action="{{ url('update', {'id': recipe.id}) }}">
+				<label class="w3-left w3-text-grey w3-padding-small w3-margin-top">Name Of The Recipe</label>
+				<input type="text" class="w3-input" value="{{ recipe.name }}" name="name">
+
+				<label class="w3-left w3-text-grey w3-padding-small w3-margin-top">Ingredients</label>
+				<textarea class="w3-input" name="ingredients">{{ recipe.ingredients }}</textarea>
+
+				<label class="w3-left w3-text-grey w3-padding-small w3-margin-top">Instructions</label>
+				<textarea class="w3-input" name="instructions">{{ recipe.instructions }}</textarea>
+
+				<label class="w3-left w3-text-grey w3-padding-small w3-margin-top">Preparation Time</label>
+				<input type="number" class="w3-input w3-margin-bottom" value="{{ recipe.time }}" name="time">
+
+				<div class="w3-container w3-padding-32">
+					<input class="w3-btn w3-teal w3-margin-top w3-margin-bottom w3-round-xxlarge" type="submit" value="Submit" style="transition:all ease 1.5s;width:15%">
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

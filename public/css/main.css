@@ -1,0 +1,14 @@
+h1.title {
+	font-weight:normal;
+	color:teal;
+	padding:2rem;
+}
+a.navbar {
+	transition: all ease-out .4s !important;
+}
+a.navbar:hover {
+	color:#005950 !important;
+}
+.hello {
+	color:coral;
+}

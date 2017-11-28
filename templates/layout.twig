@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>{% block title '' %} - SilexApp</title>
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ asset('css/w3-v4.css') }}" type="text/css">
+		
+	{% endblock %}
+	<style>
+	* {
+		box-sizing:border-box;
+	}
+	.container {
+		display:grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap:2rem;
+		margin:0 2rem;
+	}
+	.container-2 {
+		width:100vw;
+		display:flex;
+		justify-content: center;
+	}
+	i.trash-icon, i.edit-icon {
+		transition:all ease-out .4s;
+	}
+	i.trash-icon:hover, i.edit-icon:hover {
+		color:#005950;
+	}
+	.card {
+		transition: all ease-in-out 1s;
+	}
+	.card:hover {
+		/*transform:translate(5px, -5px);*/
+		transform:scale(1.08,1.08);
+	}
+	@media (max-width:1024px) {
+		.container {
+			display:grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap:2rem;
+			margin:0 2rem;
+		}
+	}
+
+	@media (max-width:650px) {
+		.container {
+			display:grid;
+			grid-template-columns: 1fr;
+			grid-gap:2rem;
+			margin:0 2rem;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="w3-bar w3-teal w3-top">
+    	{# <a href="#" class="w3-bar-item w3-button w3-right w3-hover-none navbar"><i class="fa fa-search w3-large"></i></a> #}
+    	<a href="{{ url('home') }}" class="w3-bar-item w3-button w3-right w3-hover-none navbar"><i class="fa fa-home w3-large"></i></a>
+    	<a href="{{ url('new_recipe')}}" class="w3-bar-item w3-button w3-left w3-hover-none navbar"><i class="fa fa-plus"></i> Add Recipe</a>
+	</div>
+
+	{% block content %} {% endblock %}
+
+</body>
+</html>
